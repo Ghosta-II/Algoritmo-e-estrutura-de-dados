@@ -17,11 +17,16 @@ while True:
         pessoas, quantidade = map(int, input().split())
 
         totalpessoas += pessoas
-        totalconsumo += pessoas * quantidade
+        totalconsumo += quantidade
 
-        consumo[quantidade] = consumo.get(quantidade, 0) + pessoas
+        consumoporpessoa = quantidade // pessoas
+
+        consumo[consumoporpessoa] = consumo.get(consumoporpessoa, 0) + pessoas
 
     valores = sorted(consumo.items())
+
+    if caso > 1:
+        print()
 
     print(f"Cidade# {caso}:")
 
@@ -35,8 +40,7 @@ while True:
 
     media = math.floor(media * 100) / 100
 
-    print(f"Consumo medio: {media:.2f} m3")
-    print()
+    print(f"Consumo medio: {media:.2f} m3.")
 
     caso += 1
 

@@ -24,10 +24,10 @@ for _ in range(N):
             else:
                 resultado.append('0' * quantidade )
         #Referente aos espaços
-        elif texto[i] == "":
+        elif texto[i] == " ":
             inicio = i
 
-            while i < len(texto) and texto[i] == "0":
+            while i < len(texto) and texto[i] == " ":
                 i += 1
             quantidade = i - inicio
 
@@ -40,7 +40,7 @@ for _ in range(N):
                 resultado.append('$')
                 resultado.append(chr(quantidade))
             else:
-                resultado.append('0' * quantidade )
+                resultado.append(' ' * quantidade )
         else:
             resultado.append(texto[i])
             i += 1

@@ -1,9 +1,9 @@
 def prioridade(operador):
     if operador == "^":
         return 3
-    if operador == "*" and operador == "/":
+    if operador == "*" or operador == "/":
         return 2
-    if operador == "+" and operador == "-":
+    if operador == "+" or operador == "-":
         return 1
     return 0
 
@@ -33,6 +33,6 @@ for _ in range(N):
             ):
                 saida.append(pilha.pop())
             pilha.append(caractere)
-        while pilha:
-            saida.append(pilha.pop)
+    while pilha:
+        saida.append(pilha.pop())
     print("".join(saida))

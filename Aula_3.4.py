@@ -16,27 +16,31 @@ while True:
         pos_m = (pos_m - (m-1)) % len(pessoas)
 
         pessoas_k = pessoas[pos_k]
-        pessoas_m = pessoas[pessoas_m]
+        pessoas_m = pessoas[pos_m]
 
         if pessoas_k == pessoas_m:
-            resultado.append(f"{pessoas_k:2d}")
+            resultado.append(f"{pessoas_k:3d}")
 
             pessoas.pop(pos_k)
 
             if pessoas:
-                pos_k %=len(pessoas)
+                pos_m = (pos_k - 1) % len(pessoas)
+                pos_k %= len(pessoas)
+        else:
+            resultado.append(f"{pessoas_k:3d}{pessoas_m:3d}")
+
+            if pos_k > pos_m:
+                pessoas.pop(pos_k)
+                pessoas.pop(pos_m)
+                novo_k = pos_k - 1
+                novo_m = pos_m - 1
             else:
-                resultado.appned(f"{pessoas_k:2d}")
-                resultado.appned(f"{pessoas_m:2d}")
+                pessoas.pop(pos_m)
+                pessoas.pop(pos_k)
+                novo_k = pos_k
+                novo_m = pos_m - 2
 
-                if pos_k > pos_m:
-                    pessoas.pop(pos_k)
-                    pessoas.pop(pos_m)
-                else:
-                    pessoas.pop(pos_k)
-                    pessoas.pop(pos_m)
-
-                if pessoas:
-                    pos_k %= len(pessoas)
-                    pos_m %= len(pessoas)
+            if pessoas:
+                pos_k = novo_k % len(pessoas)
+                pos_m = novo_m % len(pessoas)
     print(",".join(resultado))

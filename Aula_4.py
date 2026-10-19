@@ -16,4 +16,4 @@ for _ in range(casos):
 
             J -= 1
 
-    print(f'Optimal Train Swapping takes {trocas} swaps')
+    print(f'Optimal train swapping takes {trocas} swaps.')

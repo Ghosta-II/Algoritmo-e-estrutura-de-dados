@@ -5,7 +5,7 @@ for caso in range(casos):
 
     tabela = [[] for _ in range(M)]
 
-    valores = list(map(int(input().split())))
+    valores = list(map(int, input().split()))
 
     for valor in valores:
         posicao = valor % M
@@ -16,9 +16,9 @@ for caso in range(casos):
         print(f"{i} ->", end="")
 
         for valor in tabela[i]:
-            print(f"{valor} ->", end="")
+            print(f" {valor} ->", end="")
 
-        print()
+        print(" \\")
 
     if caso < casos - 1:
         print()

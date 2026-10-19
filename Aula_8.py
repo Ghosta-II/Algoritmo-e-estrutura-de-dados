@@ -32,13 +32,13 @@ while True:
                 if removido != valor:
                     epilha = False
 
-            if not pilha:
-                epilha = False
+            if not fila:
+                efila = False
             else:
                 removido = fila.popleft()
 
                 if removido != valor:
-                    epilha = False
+                    efila = False
 
             if not prioridade:
                 eprioridade = False

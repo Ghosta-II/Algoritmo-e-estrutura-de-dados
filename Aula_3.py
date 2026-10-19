@@ -15,7 +15,7 @@ while True:
             descartadas.append(str(fila.popleft()))
 
             fila.append(fila.popleft())
-    print("Discarded cards:",",".join(descartadas))
+    print("Discarded cards:",", ".join(descartadas))
     print("Remaining card:", fila[0])
     
     

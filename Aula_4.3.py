@@ -1,6 +1,6 @@
 while True:
     try:
-        N = int(input)
+        N = int(input())
     except EOFError:
         break
 
@@ -9,9 +9,9 @@ while True:
     for _ in range(N):
         Telefones.append(input().strip())
 
-        Telefones.sort()
+    Telefones.sort()
 
-        economia = 0
+    economia = 0
 
     for i in range (1, N):
         anterior = Telefones[i -1]
@@ -20,6 +20,6 @@ while True:
         J = 0
         while J < len(atual) and atual[J] == anterior[J]:
              J += 1 
-             economia += J
+        economia += J
 
     print(economia)
